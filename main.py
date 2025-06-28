@@ -1,10 +1,9 @@
 import requests
-import os
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
-# API Keys from environment
-RAPIDAPI_KEY = os.environ.get("RAPIDAPI_KEY")
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
+# 🔐 API Keys (User Provided)
+RAPIDAPI_KEY = "825ba09bcdmsh6163b33e5a1b5bbp198d09jsn57811648640f"
+BOT_TOKEN = "7696662096:AAHs9koeTREwB_qA2y2WWAGPEQqrgWf6HCU"
 
 def get_vehicle_info(number):
     url = "https://rto-vehicle-information-india.p.rapidapi.com/getVehicleInfo"
@@ -26,16 +25,11 @@ def get_vehicle_info(number):
         if "result" in data:
             r = data["result"]
             return (
-                f"🚗 *Owner:* {r.get('owner_name', 'N/A')}
-"
-                f"🛻 *Vehicle Class:* {r.get('vehicle_class', 'N/A')}
-"
-                f"⛽ *Fuel Type:* {r.get('fuel_type', 'N/A')}
-"
-                f"📅 *Reg. Date:* {r.get('registration_date', 'N/A')}
-"
-                f"🛡️ *Insurance:* {r.get('insurance_upto', 'N/A')}
-"
+                f"🚗 *Owner:* {r.get('owner_name', 'N/A')}\n"
+                f"🛻 *Vehicle Class:* {r.get('vehicle_class', 'N/A')}\n"
+                f"⛽ *Fuel Type:* {r.get('fuel_type', 'N/A')}\n"
+                f"📅 *Reg. Date:* {r.get('registration_date', 'N/A')}\n"
+                f"🛡️ *Insurance:* {r.get('insurance_upto', 'N/A')}\n"
                 f"🔰 *RC Status:* {r.get('rc_status', 'N/A')}"
             )
         else:
