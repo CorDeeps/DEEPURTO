@@ -2,7 +2,7 @@ import requests
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 # 🔐 API Keys (User Provided)
-RAPIDAPI_KEY = "825ba09bcdmsh6163b33e5a1b5bbp198d09jsn57811648640f"
+RAPIDAPI_KEY = "55ad50313cmsh406dd1e39526ebcp1a81e2jsn8f74b5f30e3c"
 BOT_TOKEN = "7696662096:AAHs9koeTREwB_qA2y2WWAGPEQqrgWf6HCU"
 
 def get_vehicle_info(number):
